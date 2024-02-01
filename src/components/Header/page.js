@@ -16,13 +16,10 @@ export default function Header() {
 `;
   return (
     <div>
-      <Container size="100">
-        <Flex direction="column" gap="30" justify-content="space-between">
+      <Container size="800">
+        <Flex direction="row" gap="30" justify-content="space-evenly">
           <Heading>🐕 Walkies</Heading>
-        </Flex>
-      </Container>
-      <Container size="100">
-        <Flex direction="row" gap="20" justify-content="flex-end">
+
           <Link className="main_nav" href={"/"}>
             <HomeIcon
               width="40px"
