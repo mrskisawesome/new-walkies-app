@@ -72,7 +72,7 @@ export default function Header() {
       </Container>
       <Container>
         <Text color="cyan">
-          The social site for those who love their 'Walkies!'
+          The social site for those who love their Walkies!
         </Text>
       </Container>
     </div>
