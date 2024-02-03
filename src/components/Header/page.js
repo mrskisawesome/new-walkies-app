@@ -9,7 +9,7 @@ import {
 import { HomeIcon, ChatBubbleIcon } from "@radix-ui/react-icons";
 import AvatarDemo from "../Avatar/page";
 //
-export default function Header() {
+export default function Header({ imageUrl }) {
   const outlinePulse = `keyframes
   from { outline-color: cyan; }
   to { outline-color: beige; }
@@ -31,6 +31,18 @@ export default function Header() {
               }}
             />
           </Link>
+          <Link className="main_nav" href={"/profile"}>
+            <HomeIcon
+              width="40px"
+              height="40px"
+              style={{
+                animation: `outlinePulse 1s ease-in-out infinite alternate`,
+                outline: "2px solid transparent",
+                outlineOffset: "4px",
+              }}
+            />
+            Your Profile Page
+          </Link>
           <Link className="main_nav" href={"/posts"}>
             <ChatBubbleIcon
               width="40px"
@@ -42,6 +54,7 @@ export default function Header() {
               }}
             />
           </Link>
+
           <Link className="main_nav" href={"/"}>
             <HomeIcon
               width="40px"
@@ -53,18 +66,7 @@ export default function Header() {
               }}
             />
           </Link>
-          <Link className="main_nav" href={"/"}>
-            <HomeIcon
-              width="40px"
-              height="40px"
-              style={{
-                animation: `outlinePulse 1s ease-in-out infinite alternate`,
-                outline: "2px solid transparent",
-                outlineOffset: "4px",
-              }}
-            />
-          </Link>
-          <AvatarDemo />
+          <AvatarDemo imageUrl={imageUrl} />
         </Flex>
       </Container>
       <Container>
