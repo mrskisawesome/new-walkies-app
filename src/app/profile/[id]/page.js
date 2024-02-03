@@ -24,12 +24,7 @@ export default async function IndividualProfile({ params }) {
           <h2>{profile.username}</h2>
           <p> {profile.bio}</p>
           {profile.photo && (
-            <Image
-              src={`data:image/jpeg;base64,${profile.photo_data}`}
-              alt="Profile"
-              width={200}
-              height={200}
-            />
+            <Image src={profile.photo} alt="Profile" width={200} height={200} />
           )}
           {/* <form action={handleAddComment}>
             <p>Add a comment</p>
