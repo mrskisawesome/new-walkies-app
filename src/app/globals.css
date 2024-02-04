@@ -1,6 +1,19 @@
-/* styles.css */
+/* globals.css */
+
+/* General styles */
+.root-layout {
+  margin: 0;
+  font-family: "Urbanist", sans-serif;
+  background-color: color-mix(in hsl shorter hue, color 50%, color 50%);
+}
+
+main {
+  padding: 20px;
+}
+
+/* Popover styles */
 .PopoverTrigger {
-  background-color: white;
+  background-color: rgb(152, 242, 249);
   border-radius: 4px;
 }
 
@@ -8,12 +21,14 @@
   border-radius: 4px;
   padding: 20px;
   width: 260px;
-  background-color: white;
+  background-color: rgb(129, 217, 237);
 }
 
 .PopoverArrow {
   fill: white;
 }
+
+/* Form styles */
 form {
   display: flex;
   flex-direction: column;
@@ -22,56 +37,26 @@ form {
   gap: 1rem;
   max-width: 30%;
 }
+
+/* 404 error styles */
 .error404 {
   background-image: linear-gradient(-45deg, #f43f6c, #56ab27);
   animation: disco 5s infinite linear;
 }
 
-@keyframes disco {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0 100%;
-  }
-}
-
-.error404h2 {
+.error404 h2 {
   font-family: cursive;
   text-shadow: 2px 2px 5px #f43f6c;
   animation: shake 0.5s ease-in-out infinite;
 }
 
-@keyframes shake {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(10px);
-  }
-}
-
-.error404p {
+.error404 p {
   color: #fff;
   text-align: center;
   animation: pulse 1s infinite ease-in-out;
 }
 
-@keyframes pulse {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.8;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+/* Navigation styles */
 .main_nav {
   display: flex;
   padding: 16px;
@@ -81,20 +66,18 @@ form {
 }
 
 .home {
-  transformstyle: "preserve-3d";
-  transform: "perspective(100px) rotateX(45deg)";
-  boxshadow: "0 0 10px rgba(0, 0, 0, 0.2)";
+  transform-style: preserve-3d;
+  transform: perspective(100px) rotateX(45deg);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-@import "@radix-ui/colors/black-alpha.css";
-@import "@radix-ui/colors/violet.css";
 
+/* Avatar styles */
 .AvatarRoot {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   vertical-align: middle;
   overflow: hidden;
-  user-select: none;
   width: 45px;
   height: 45px;
   border-radius: 100%;
@@ -119,4 +102,43 @@ form {
   font-size: 15px;
   line-height: 1;
   font-weight: 500;
+}
+
+/* Keyframes */
+@keyframes disco {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.accessory-container {
+  width: 25%;
+  height: auto;
 }

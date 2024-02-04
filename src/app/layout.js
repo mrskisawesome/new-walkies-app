@@ -23,7 +23,7 @@ export default async function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={urbanist.className}>
+        <body>
           <Theme
             accentColor="cyan"
             grayColor="slate"

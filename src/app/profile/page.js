@@ -47,7 +47,6 @@ export default async function Profiles() {
         {profile && (
           <div key={profile.userId}>
             <p>{profile.bio}</p>
-            console.log({profile.photo})
             {profile.photo && (
               <Image
                 src={profile.photo}
