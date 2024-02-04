@@ -72,7 +72,7 @@ export default function Header({ imageUrl }) {
               />
             </Link>
 
-            <Link className="main_nav" href={"/"}>
+            <Link className="main_nav" href={"/map"}>
               <PaperPlaneIcon
                 width="40px"
                 height="40px"
