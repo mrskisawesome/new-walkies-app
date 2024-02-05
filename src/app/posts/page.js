@@ -2,6 +2,8 @@ import { sql } from "@vercel/postgres";
 import { revalidatePath } from "next/cache";
 import Link from "next/link";
 import { auth, currentUser } from "@clerk/nextjs";
+import { Button } from "@radix-ui/themes";
+import { HeartIcon } from "@radix-ui/react-icons";
 
 //toplevel
 export default async function Posts() {
@@ -31,6 +33,19 @@ export default async function Posts() {
 
     revalidatePath("/posts");
   }
+  async function handleAddLike(postId) {
+    "use server";
+    const { profile_id } = profile; // Assuming profile is defined in the scope
+    // Check if the user has already liked the post
+    const existingLike =
+      await sql`SELECT * FROM post_likes WHERE post_id = ${postId} AND profile_id = ${profile_id}`;
+    if (existingLike.rows.length === 0) {
+      // If the user hasn't liked the post yet, insert a new like
+      await sql`INSERT INTO post_likes (post_id, profile_id) VALUES (${postId}, ${profile_id})`;
+    }
+    revalidatePath("/posts");
+  }
+
   return (
     <div>
       <h2>Your Posts</h2>
@@ -52,6 +67,11 @@ export default async function Posts() {
             </Link>
             <div key={post.title}>
               <p>{post.content}</p>
+            </div>
+            <div>
+              <Button onClick={() => handleAddLike(post.id)}>
+                <HeartIcon width="16" height="16" /> Like
+              </Button>
             </div>
           </>
         );

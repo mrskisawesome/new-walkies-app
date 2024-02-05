@@ -3,9 +3,6 @@ import Head from "next/head";
 export default function MapPage() {
   return (
     <div>
-      <Head>
-        <title>Map Page</title>
-      </Head>
       <h2>Map Page</h2>
       <div className="map-container">
         <iframe

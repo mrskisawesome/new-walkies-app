@@ -16,7 +16,7 @@ export default function DogFriendlyMap() {
               location: "Norwich", // Specify the location (e.g., Norwich)
             },
             headers: {
-              Authorization: `Bearer GW-ijADbemAWlWIL4rbNqGkivY8ESf61t6jZKxshRdgLTVUWjK8WypBWLUTckG4jp6LCC1Q9EH7fI8EmEkJ0ofUWaqqPfSIPR3ak2IGD-JTmnZ9Gd3SLFBSNcv6_ZXYx`,
+              Authorization: `Bearer YELP_API_KEY`,
             },
           }
         );
